@@ -17,7 +17,6 @@ const clientOptions = { serverApi: { version: '1', strict: true, deprecationErro
 async function startServer() {
   try {
       await mongoose.connect(process.env.MONGO_URI, clientOptions);
-      await mongoose.connection.db.admin().command({ ping: 1 });
       console.log(process.env.MONGO_URI)
       console.log("MongoDB Connected");
       console.log("Pinged your deployment. You successfully connected to MongoDB!");
@@ -28,8 +27,6 @@ async function startServer() {
 
   } catch (err) {
     console.error(err);
-  } finally {
-    await mongoose.disconnect();
   }
 }
 
