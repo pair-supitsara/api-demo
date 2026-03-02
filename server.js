@@ -21,7 +21,7 @@ async function startServer() {
       console.log("MongoDB Connected");
       console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
-      app.listen(5000, () => {
+      app.listen(process.env.PORT, () => {
         console.log("Server running");
       });
 
