@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.json());
 // routes
 app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/tasks", require("./routes/taskRoutes"));
 
 const PORT = process.env.PORT || 5000;
 const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
