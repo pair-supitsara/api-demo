@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
 // READ ALL
 router.get("/", async (req, res) => {
   try {
-    const task = await Task.find();
+    const task = await Task.find().populate("user");
     res.json(task);
   } catch (err) {
     res.status(500).json({ error: err.message });
